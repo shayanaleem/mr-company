@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carasol</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Screen Carousel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .carousel {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .slides {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      transition: transform 1s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 6px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      opacity: 1;
+      background-color: #fff;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 0 15px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carousel">
+    <div class="slides" id="slides">
+      <div class="slide" style="background-image: url('garden1.avif');"></div>
+      <div class="slide" style="background-image: url('garden5.jpg');"></div>
+      <div class="slide" style="background-image: url('garden6.webp');"></div>
+      <div class="slide" style="background-image: url('garden7.webp');"></div>
+      <div class="slide" style="background-image: url('garden8.webp');"></div>
+
+
+    </div>
+
+    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <script>
+    const slides = document.getElementById("slides");
+    const dotsContainer = document.getElementById("dots");
+    const totalSlides = slides.children.length;
+    let index = 0;
+    let interval = setInterval(nextSlide, 5000);
+
+    function updateSlidePosition() {
+      slides.style.transform = `translateX(-${index * 100}vw)`;
+      updateDots();
+    }
+
+    function nextSlide() {
+      index = (index + 1) % totalSlides;
+      updateSlidePosition();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + totalSlides) % totalSlides;
+      updateSlidePosition();
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll(".dot");
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    function goToSlide(i) {
+      index = i;
+      updateSlidePosition();
+      resetInterval();
+    }
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(nextSlide, 5000);
+    }
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.addEventListener("click", () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+    updateDots();
+  </script>
+</body>
+</html>
+
+</body>
+</html>

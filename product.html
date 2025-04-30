@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mango Varieties</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fcad45;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .product-image {
+      width: 100%;
+      border-radius: 12px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      margin-bottom: 1.5rem;
+    }
+
+    .features li {
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      color: #ffcb6a;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      background-color: #ffc788;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #000000;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .product {
+      text-align: center;
+      max-width: 150px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product h3 {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #000000;
+    }
+  </style>
+</head>
+
+<body class="bg-yellow-50 font-sans">
+ <!-- Navbar -->
+<nav class="bg-orange-400 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold text-lime-900">VARIETIES</div>
+    <div class="space-x-6 text-lime-800 font-medium hidden md:flex">
+      <a href="home.html" class="hover:text-white">Home</a>
+      <a href="about us.html" class="hover:text-white">About</a>
+      <a href="contact mr .html" class="hover:text-white">Contact</a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <img class="product-image" src="farm pic.webp" alt="Juicy Mango">
+    <h1 class="title">Juicy Mango</h1>
+    <p class="description">
+      Fresh, sun-ripened mangoes straight from organic farms. Perfectly sweet, irresistibly juicy.
+    </p>
+    <ul class="features">
+      <li>✔️ 100% Organic</li>
+      <li>✔️ Rich in Vitamin C</li>
+      <li>✔️ Grown in tropical climates</li>
+      <li>✔️ Great for smoothies, salads, or snacking</li>
+    </ul>
+
+    <div class="products">
+      <div class="product">
+        <a href="#"><img src="mallika-mango mr.gif" alt="Malaika" /></a>
+        <h3>Mallika</h3>
+      </div>
+      <div class="product">
+        <a href="#"><img src="himayat-mango mr.png" alt="Himayat" /></a>
+        <h3>Himayat</h3>
+      </div>
+      <div class="product">
+        <a href="#"><img src="alphonso mr.webp" alt="Alphonso" /></a>
+        <h3>Alphonso</h3>
+      </div>
+      <div class="product">
+        <a href="#"><img src="Mango_LangraBenarsi.jpeg" alt="Langra" /></a>
+        <h3>Benishan</h3>
+      </div>
+      <div class="product">
+        <a href="#"><img src="totapuro mr.jpg" alt="Totapuri" /></a>
+        <h3>Totapuri</h3>
+      </div>
+      <div class="product">
+        <a href="#"><img src="Banganapalli.jpg" alt="Banganapalli" /></a>
+        <h3>Banganapalli</h3>
+      </div>
+      <div class="product">
+        <a href="dasheri.jpg"><img src="dasheri.jpg" alt="Banganapalli" /></a>
+        <h3>Dasheri</h3>
+      </div>
+      <div class="product">
+        <a href="kesar.jpg"><img src="kesar.jpg" alt="Banganapalli" /></a>
+        <h3>Kesar</h3>
+      </div>
+      <div class="product">
+        <a href="malgova.jpg"><img src="malgova.jpg" alt="Banganapalli" /></a>
+        <h3>Malgova</h3>
+      </div>
+      <div class="product">
+        <a href="chinna.jpg"><img src="chinna.jpg" alt="Banganapalli" /></a>
+        <h3>Chinna rassal</h3>
+      </div>
+      <div class="product">
+        <a href="pedda-.png"><img src="pedda-.png" alt="Banganapalli" /></a>
+        <h3>Pedda rassal</h3>
+      </div>
+      <div class="product">
+        <a href="langra-mango.webp"><img src="langra-mango.webp" alt="Banganapalli" /></a>
+        <h3>Langra</h3>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
